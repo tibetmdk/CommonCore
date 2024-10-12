@@ -1,23 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 18:05:43 by tmidik            #+#    #+#             */
-/*   Updated: 2024/10/10 16:45:13 by tmidik           ###   ########.fr       */
+/*   Created: 2024/10/11 22:12:35 by tmidik            #+#    #+#             */
+/*   Updated: 2024/10/11 23:22:00 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char *ft_strrchr(const char *s, int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
+	int i = 0;
+	char *chr = NULL;
+		
+	while (s[i] != '\0')
+	{
+		if (s[i] == (char)c)
+			chr = (char *)&s[i];
 		i++;
-	return (i);
+	}
+	if (c == '\0')
+		return (char *)&s[i];
+	return (chr);
+}
+
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	char *name = "menemen";
+	char *result = ft_strrchr(name, '\0');
+	printf("%s\n", strrchr(name, '\0'));
+	printf("%s\n", result);
 }
