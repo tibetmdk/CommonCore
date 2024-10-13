@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 14:10:07 by tmidik            #+#    #+#             */
-/*   Updated: 2024/10/12 23:22:07 by tmidik           ###   ########.fr       */
+/*   Created: 2024/10/12 22:35:29 by tmidik            #+#    #+#             */
+/*   Updated: 2024/10/12 22:43:05 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-#define LIBFT_H
+char *ft_strtrim(char const *s1, char const *set)
+{
+	int i;
 
-# include <stdlib.h>
-# include <unistd.h>
-
-size_t	ft_strlen(const char *str);
-
-# endif
+	i = 0;
+	while (s1[i] != '\0')
+	{
+		if (s1[i] == set)
+		{
+			
+		}
+	}
+}
