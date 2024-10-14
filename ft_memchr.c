@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 22:30:50 by tmidik            #+#    #+#             */
-/*   Updated: 2024/10/13 23:01:28 by tmidik           ###   ########.fr       */
+/*   Updated: 2024/10/14 14:36:40 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 
 void *ft_memchr(const void *s, int c, size_t n)
 {
-    unsigned char *ptr = (unsigned char *)s; 
+    unsigned char *ptr;
+    
+    ptr = (unsigned char *)s; 
     while (n--) 
     {
         if (*ptr == (unsigned char)c) 

@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 16:03:21 by tmidik            #+#    #+#             */
-/*   Updated: 2024/10/12 16:05:31 by tmidik           ###   ########.fr       */
+/*   Updated: 2024/10/14 13:22:06 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,10 @@ char *ft_itoa(int n)
             str[len] = '-';
     }
     return str;
+}
+
+#include <stdio.h>
+int main()
+{
+    printf("%s", ft_itoa(0));
 }
