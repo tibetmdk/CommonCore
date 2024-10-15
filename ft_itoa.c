@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 16:03:21 by tmidik            #+#    #+#             */
-/*   Updated: 2024/10/14 18:45:33 by tmidik           ###   ########.fr       */
+/*   Updated: 2024/10/15 17:25:12 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int get_length(int n)
     while (n != 0)
     {
         len++;
-        n /= 10;
+        n /= 10; //0.6
     }
     return len;
 }
@@ -31,6 +31,8 @@ char *ft_itoa(int n)
     char *str = (char *)malloc((len + 1) * sizeof(char));
     if (str == NULL)
         return (NULL);
+   /* if (n == -2147483648)
+        return ("-2147483648");  */
     
     str[len] = '\0';
     int is_negative = 0;
