@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 13:11:20 by tmidik            #+#    #+#             */
-/*   Updated: 2024/10/17 13:23:33 by tmidik           ###   ########.fr       */
+/*   Updated: 2024/10/17 14:52:02 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void ft_striteri(char *s, void (*f)(unsigned int, char*))
 	unsigned int i;
 
 	if (!s || !f)
-		return (NULL);
+		return;
 	i = 0;
 	while (s[i] != '\0')
 	{

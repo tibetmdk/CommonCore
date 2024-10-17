@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:52:46 by tmidik            #+#    #+#             */
-/*   Updated: 2024/10/14 13:13:47 by tmidik           ###   ########.fr       */
+/*   Updated: 2024/10/17 18:19:37 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	int i;
 	char *str;
 	int j;
-
+	
+	if (len == 0)
+		return (NULL);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	i = 0;
 	j = 0;
