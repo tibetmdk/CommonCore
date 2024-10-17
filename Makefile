@@ -12,7 +12,7 @@ SRC = ft_atoi.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 OBJ = $(SRC:.c=.o)    # C dosyalarının nesne dosyalarına dönüştürülmüş hali
 
 # Header file
-HEADER = libft.h      # Projenin başlık dosyası (header file)
+HEADER = libft.h      # Projenin başlık dosyası (header file),Fakat bunun yerine tüm c dosyalarına, manuel olarak bu kütüphaneyi eklersende aynı şey.
 
 # Name of the static library
 NAME = libft.a        # Statik kütüphane dosyasının adı
@@ -22,7 +22,10 @@ all: $(NAME)          # Varsayılan hedef: libft.a dosyasını oluştur
 
 # Creating the static library
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)  # Tüm nesne dosyalarını ar komutu ile birleştir ve libft.a dosyasını oluştur
+	ar rcs $(NAME) $(OBJ)  #Tüm nesne dosyalarini ar komutu ile birleştir ve libft.a dosyasini oluştur.   r: Dosyaları arşive ekle veya zaten varsa güncelle.
+			#  c: Eğer arşiv mevcut değilse, oluştur.
+			#  s: Arşivin içindeki dosyaların hızlı erişim için bir indeksini oluştur. Bu, arşivdeki dosyaların hızlıca bulunabilmesi için gereklidir.
+
 
 # Rule to compile .c files into .o files
 %.o: %.c $(HEADER)

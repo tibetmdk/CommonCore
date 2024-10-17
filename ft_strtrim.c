@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 22:35:29 by tmidik            #+#    #+#             */
-/*   Updated: 2024/10/17 18:56:46 by tmidik           ###   ########.fr       */
+/*   Updated: 2024/10/18 00:00:54 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,18 @@ char *ft_strtrim(char const *s1, char const *set)
 {
 	int start;
 	int end;
-	
+	char *new;
+
 	start = 0;
-	end = strlen(s1) - 1;
-	
-	while (s1[start] && strchr(set, s1[start]))
+	end = ft_strlen(s1) - 1;
+	if (end == 0)
+		return(ft_strdup(""));
+	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
-	while (s1[end] && strchr(set, s1[end]))
+	while (s1[end] && ft_strchr(set, s1[end]))
 		end--;
-	if (start)
+	if (start > end)
+		return (ft_strdup(""));
+	new = ft_substr(s1, start, end - start + 1);
+	return (new);
 }
