@@ -6,20 +6,20 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 12:36:59 by tmidik            #+#    #+#             */
-/*   Updated: 2024/10/17 12:58:35 by tmidik           ###   ########.fr       */
+/*   Updated: 2024/10/21 18:18:18 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strmapi(const char *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	char *str;
-	unsigned int i;
-	
+	char			*str;
+	unsigned int	i;
+
 	if (!s || !f)
 		return (NULL);
-	str = (char *)malloc(sizeof(char) * (strlen(s) + 1));
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -29,5 +29,5 @@ char *ft_strmapi(const char *s, char (*f)(unsigned int, char))
 		i++;
 	}
 	str[i] = '\0';
-	return (str);	
+	return (str);
 }

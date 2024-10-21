@@ -6,22 +6,24 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 23:13:22 by tmidik            #+#    #+#             */
-/*   Updated: 2024/10/14 13:43:42 by tmidik           ###   ########.fr       */
+/*   Updated: 2024/10/21 18:27:28 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
 
-char *ft_strjoin(const char *s1, const char *s2)
-{	
-	char *str;
-	int i;
-	int j;
+char	*ft_strjoin(const char *s1, const char *s2)
+{
+	char	*str;
+	int		i;
+	int		j;
+	int		total_len;
 
 	i = 0;
 	j = 0;
-	str = (char *)malloc(sizeof(char) * ((ft_strlen(s1)) + (ft_strlen(s2)) + 1));
+	total_len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	str = (char *)malloc(sizeof(char) * total_len);
 	if (!str)
 		return (NULL);
 	while (s1[i] != '\0')
@@ -36,14 +38,5 @@ char *ft_strjoin(const char *s1, const char *s2)
 		j++;
 	}
 	str[i] = '\0';
-	return (str);	
-}
-
-#include <stdio.h>
-
-int main()
-{
-	char *s1 = "hellodjdjgfdhgfdhgfd";
-	char *s2 = "worldhgfjhgfjhgfjhgf";
-	printf("%s", ft_strjoin(s1,s2));
+	return (str);
 }

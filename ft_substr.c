@@ -1,55 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   (EKSİK)ft_substr.c                                 :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:52:46 by tmidik            #+#    #+#             */
-/*   Updated: 2024/10/17 18:19:37 by tmidik           ###   ########.fr       */
+/*   Updated: 2024/10/21 18:28:46 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// eksikler var.chat gpt ye hatalarını sor!
-
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int i;
-	char *str;
-	int j;
-	
-	if (len == 0)
-		return (NULL);
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	i = 0;
-	j = 0;
+	size_t	i;
+	size_t	s_len;
+	char	*str;
+
 	if (!s)
 		return (NULL);
-	while (i < start)
-		i++;
-	while (i < (start + len))
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		return (ft_strdup(""));
+	if (len > s_len - start)
+		len = s_len - start;
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (i < len)
 	{
-		str[j] = s[i];
-		j++;
+		str[i] = s[start + i];
 		i++;
 	}
-	str[j] = '\0';
+	str[i] = '\0';
 	return (str);
 }
-
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-	char *s = "Hello world!";
-	printf("%s", ft_substr(s, 6, 20));
-}
-
-// Hello world!
-
-/* ÖNEMLİ NOT */
-
-/* unsigned int türü, negatif olmayan tamsayıları temsil eder. */
-/* size_t, platforma bağlı bir türdür ve C/C++ dil standartlarında bellek boyutlarını veya nesne boyutlarını ifade etmek için kullanılır. */

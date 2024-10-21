@@ -6,28 +6,22 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 21:10:28 by tmidik            #+#    #+#             */
-/*   Updated: 2024/10/18 00:03:07 by tmidik           ###   ########.fr       */
+/*   Updated: 2024/10/21 18:24:38 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	if (c == '\0')
 		return ((char *)&s[i]);
-		
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
 			return ((char *)&s[i]);
 		i++;
 	}
-	return(0);
-}
-
-#include <stdio.h>
-int main()
-{
-	char *name = "sapık";
-	printf("%s", ft_strchr(name, 's'));
+	return (0);
 }
