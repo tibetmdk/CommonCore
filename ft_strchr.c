@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 21:10:28 by tmidik            #+#    #+#             */
-/*   Updated: 2024/10/21 18:24:38 by tmidik           ###   ########.fr       */
+/*   Updated: 2024/10/22 19:17:17 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	if (c == '\0')
-		return ((char *)&s[i]);
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 			return ((char *)&s[i]);
 		i++;
 	}
+	if ((char)c == '\0')
+		return ((char *)&s[i]);
 	return (0);
 }

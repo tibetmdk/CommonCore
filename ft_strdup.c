@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:51:32 by tmidik            #+#    #+#             */
-/*   Updated: 2024/10/21 18:28:00 by tmidik           ###   ########.fr       */
+/*   Updated: 2024/10/22 23:19:17 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strdup(const char *s1)
 	char	*buffer;
 	int		i;
 
-	if (!s1)
-		return (NULL);
 	i = 0;
 	buffer = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1);
 	if (!buffer)

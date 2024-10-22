@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 22:12:35 by tmidik            #+#    #+#             */
-/*   Updated: 2024/10/21 18:14:46 by tmidik           ###   ########.fr       */
+/*   Updated: 2024/10/22 22:10:50 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,14 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
-	char	*chr;
+	int	i;
 
-	i = 0;
-	chr = NULL;
-	while (s[i] != '\0')
+	i = ft_strlen(s);
+	while (i >= 0)
 	{
 		if (s[i] == (char)c)
-			chr = (char *)&s[i];
-		i++;
+			return ((char *)(s + i));
+		i--;
 	}
-	if (c == '\0')
-		return ((char *)&s[i]);
-	return (chr);
+	return (0);
 }

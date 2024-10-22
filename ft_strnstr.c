@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 13:22:37 by tmidik            #+#    #+#             */
-/*   Updated: 2024/10/21 18:15:44 by tmidik           ###   ########.fr       */
+/*   Updated: 2024/10/22 22:17:14 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	i;
 	size_t	j;
 
+	if (needle[0] == '\0')
+		return ((char *)haystack);
+	if (len == 0)
+		return (NULL);
 	i = 0;
 	while (haystack[i] != '\0' && i < len)
 	{

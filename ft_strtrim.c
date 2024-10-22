@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 22:35:29 by tmidik            #+#    #+#             */
-/*   Updated: 2024/10/21 18:13:09 by tmidik           ###   ########.fr       */
+/*   Updated: 2024/10/22 23:36:43 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	char	*new;
 
+	if (!set || !s1)
+		return (NULL);
 	start = 0;
 	end = ft_strlen(s1) - 1;
 	if (end == 0)
