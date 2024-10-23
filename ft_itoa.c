@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 16:03:21 by tmidik            #+#    #+#             */
-/*   Updated: 2024/10/21 17:57:15 by tmidik           ###   ########.fr       */
+/*   Updated: 2024/10/23 12:18:24 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ char	*ft_itoa(int n)
 	char	*str;
 	int		is_negative;
 
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	len = get_length(n);
 	str = (char *)malloc((len + 1) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
-	if (n == -2147483648)
-		return ("-2147483648");
 	str[len] = '\0';
 	is_negative = 0;
 	if (n < 0)

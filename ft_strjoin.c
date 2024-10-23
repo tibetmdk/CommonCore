@@ -6,12 +6,11 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 23:13:22 by tmidik            #+#    #+#             */
-/*   Updated: 2024/10/21 18:27:28 by tmidik           ###   ########.fr       */
+/*   Updated: 2024/10/23 13:05:35 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {
