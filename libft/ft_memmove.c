@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 15:01:32 by tmidik            #+#    #+#             */
-/*   Updated: 2024/10/21 18:02:22 by tmidik           ###   ########.fr       */
+/*   Updated: 2024/10/23 18:14:12 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	d = (unsigned char *)dst;
 	s = (const unsigned char *)src;
 	if (!dst && !src)
-		return (NULL);
+		return (dst);
 	if (d < s)
 	{
 		while (len--)
