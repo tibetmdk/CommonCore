@@ -6,18 +6,20 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:33:32 by tmidik            #+#    #+#             */
-/*   Updated: 2024/10/28 13:00:11 by tmidik           ###   ########.fr       */
+/*   Updated: 2024/11/02 22:28:29 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_utoa(unsigned int num)
+static char	*ft_utoa(unsigned int num)
 {
 	char			*str;
 	unsigned int	temp;
 	int				len;
 
+	len = 0;
+	temp = num;
 	if (num == 0)
 		return (ft_strdup("0"));
 	while (temp != 0)
@@ -42,6 +44,7 @@ int	ft_printf_uns(unsigned int num)
 	char	*num_str;
 	int		len;
 
+	len = 0;
 	num_str = ft_utoa(num);
 	if (!num_str)
 		return (0);
