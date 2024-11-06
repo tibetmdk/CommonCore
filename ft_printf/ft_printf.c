@@ -27,7 +27,7 @@ static int	choose_format(char c, va_list args)
 	if (c == 'p')
 		return (ft_printf_ptr(va_arg(args, void *)));
 	if (c == 'u')
-		return (ft_printf_chr(va_arg(args, unsigned int)));
+		return (ft_printf_uns(va_arg(args, unsigned int)));
 	if (c == '%')
 		return (write(1, "%", 1));
 	return (0);

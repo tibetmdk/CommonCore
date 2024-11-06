@@ -16,5 +16,5 @@ int	ft_printf_str(const char *str)
 {
 	if (!str)
 		str = "(null)";
-	return (write (1, &str, ft_strlen(str)));
+	return (write (1, str, ft_strlen(str)));
 }

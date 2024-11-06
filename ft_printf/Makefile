@@ -5,14 +5,14 @@ SRC = $(shell find . -name "ft_*.c")
 all: $(NAME)
 
 $(NAME):
-	@gcc $(FLAG) -c $(SRC)
-	@ar rc $(NAME) *.o
+	gcc $(FLAG) -c $(SRC)
+	ar rc $(NAME) *.o
 	@echo "✅"
 clean:
-	@/bin/rm -f  *.o *a.out
+	/bin/rm -f  *.o *a.out
 fclean: clean
-	@/bin/rm -f $(NAME)
-	@echo "🗑️"
+	/bin/rm -f $(NAME)
+	echo "🗑️"
 
 re: fclean all
 
