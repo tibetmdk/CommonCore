@@ -1,19 +1,22 @@
 NAME = libftprintf.a
-FLAG = -Wall -Wextra -Werror
-SRC = $(shell find . -name "ft_*.c")
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+SRCS = ft_printf_chr.c ft_printf_hex.c ft_printf_int.c ft_printf_ptr.c ft_printf_str.c ft_printf_uns.c ft_printf.c
+
+OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME):
-	gcc $(FLAG) -c $(SRC)
-	ar rc $(NAME) *.o
-	@echo "✅"
+$(NAME) : $(OBJS)
+	ar rc $(NAME) $(OBJS)
+	
+
 clean:
-	/bin/rm -f  *.o *a.out
+	rm -f $(OBJS)
+
 fclean: clean
-	/bin/rm -f $(NAME)
-	echo "🗑️"
+	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re
